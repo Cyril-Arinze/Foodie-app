@@ -1,0 +1,11 @@
+.greeting {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--secondary-color);
+    box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
+    -webkit-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
+    padding: 1rem .1rem;
+    color: var(--secondary-black);
+    font-style: italic;
+}

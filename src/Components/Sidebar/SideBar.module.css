@@ -1,17 +1,12 @@
 .side-bar {
     background-color: var(--primary-white);
     color: var(--secondary-black);
-    position: fixed;
+    position: sticky;
     left: 0;
     top: 0;
     height: 100vh;
     padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
-    -webkit-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
-    -moz-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
-
+    grid-area: sidebar;
 }
 
 .brand {
@@ -37,7 +32,7 @@ nav>ul {
     list-style-type: none;
 }
 
-nav>ul>li>a {
+.side-bar>main>nav>ul>li>a {
     display: block;
     text-decoration: none;
     margin: .5rem;
@@ -45,10 +40,13 @@ nav>ul>li>a {
     border-radius: 15px;
     color: var(--secondary-black);
     font-size: 1.2rem;
+    /* display: flex;
+    place-items: center; */
+
 }
 
-.active,
-nav>ul>li>a:hover {
+.side-bar>main>nav>ul>li>a.active,
+.side-bar>main>nav>ul>li>a:hover {
     background-color: var(--primary-orange);
     color: var(--primary-white)
 }
@@ -59,30 +57,28 @@ nav>ul>li>a:hover {
 }
 
 @media (max-width:480px) {
+    .side-bar {
+        width: fit-content;
+        padding: 1.5rem 0;
+    }
 
     .nav_link {
         display: none;
     }
 
-    .side-bar {
-        width: 15%;
-        padding: 0;
-
-    }
 
     .brand_image {
         max-width: 100%;
         margin: auto;
     }
 
-    .active {
+    .side-bar>main>nav>ul>li>a.active {
         color: var(--primary-orange);
         background-color: var(--primary-white)
     }
 
-    nav>ul>li>a {
-
-        padding: 1rem .5rem;
+    .side-bar>main>nav>ul>li>a {
+        padding: 1rem 0;
 
     }
 }

@@ -1,0 +1,31 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1.5rem auto 1rem;
+    background-color: var(--primary-white);
+    box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
+    -webkit-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
+    -moz-box-shadow: 3px 2px 36px -20px rgba(0, 0, 0, 0.56);
+    padding: 1rem .5rem;
+    width: min(700px, 98%);
+    padding: 2%;
+    border-radius: 25px;
+
+}
+
+
+.intro_desc>h1,
+.intro_desc>p {
+    text-align: center;
+    line-height: 1.2;
+
+}
+
+.intro_desc>h1 {
+    font-size: max(2.3vw, 1.6rem);
+}
+
+.intro_desc>p {
+    font-size: max(1.5vw, 1.2rem);
+}
