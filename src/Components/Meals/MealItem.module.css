@@ -1,6 +1,5 @@
 .meal-item {
     background-color: var(--primary-white);
-    /* background-color: red; */
     border-radius: 25px;
     margin: 10px;
     padding: 1rem;
@@ -14,25 +13,41 @@
 
 .meal-item__image {
     width: 100%;
+
 }
 
 .meal-item__image>img {
     width: 100%;
+    aspect-ratio: 1;
 }
 
 .meal-item__actions {
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 1.5rem;
+    right: 1.3rem;
 }
 
 .meal-item__actions button {
     background-color: var(--primary-orange);
     color: var(--primary-white);
     border: none;
-    border-radius: 20px;
-    padding: .5rem;
+    border-radius: 100%;
+    width: 50px;
+    aspect-ratio: 1;
+    font-size: 25px;
+
+
+}
+
+.meal-item__actions button:hover {
+    /* color: var(--primary-orange);
+    background-color: var(--primary-white);
+     */
+    background-color: var(--dark-orange);
+    transform: scale(1.1);
     cursor: pointer;
-
-
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: 9px 9px 23px #e8e8e8, -9px -9px 23px #ffffff;
+    box-shadow: 9px 9px 23px #e8e8e8, -9px -9px 23px #ffffff;
 }

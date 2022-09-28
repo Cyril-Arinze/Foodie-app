@@ -8,7 +8,7 @@ const Greeting = props => {
 
     if (time < 12) {
         greeting = "Good morning"
-    } else if (time > 12 && time < 16) {
+    } else if (time >= 12 && time < 16) {
         greeting = "Good Afternoon"
     }
     else {

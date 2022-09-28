@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from "../../assests/logo.svg"
-import NavLinks from '../Data/nav-links';
+import NavLinks from '../../Data/nav-links';
 import { NavLink } from './NavLink';
 import classes from "./SideBar.module.css"
 

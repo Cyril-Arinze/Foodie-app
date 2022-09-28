@@ -2,6 +2,7 @@
 
 :root {
   --primary-orange: rgb(251, 153, 0);
+  --dark-orange: rgb(204, 126, 1);
   --primary-white: rgb(255, 255, 255);
   --secondary-black: rgb(52, 52, 56);
   --secondary-red: rgb(200, 22, 29);
@@ -15,7 +16,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
-
+  position: relative;
 }
 
 #root {
@@ -24,6 +25,13 @@ body {
     "sidebar main"
   ;
   grid-template-columns: auto 1fr;
+}
+
+#CartBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 10;
 }
 
 
