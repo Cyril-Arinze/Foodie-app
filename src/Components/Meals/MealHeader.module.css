@@ -1,6 +1,30 @@
 .meal-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    align-items: flex-start;
+    padding: .5rem 2rem;
+
+}
+
+.meal-header h2 {
+    margin: 0;
+}
+
+.meal-header select {
+    background-color: var(--primary-orange);
+    color: var(--secondary-color);
+    width: fit-content;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+}
+
+.meal-header select>option {
+    background-color: var(--primary-white);
+    color: black;
+    border: none;
+    outline: none;
+
 }

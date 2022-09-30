@@ -6,8 +6,19 @@ import CartItems from './CartItems'
 
 function Cart(props) {
 
-
     const cartCtx = useContext(CartContext)
+
+    const removeItemHandler = (id) => {
+        cartCtx.reduceCartItemAmount(id)
+    }
+    const addItemHandler = (item) => {
+        cartCtx.addToCart({ ...item, amount: 1 })
+    }
+    const reduceItemHandler = (id) => {
+        cartCtx.removeFromCart(id)
+    }
+    const totalAmount = cartCtx.totalAmount.toFixed(2)
+
 
     const cartItem = cartCtx.items.map(item => {
         return (
@@ -16,7 +27,10 @@ function Cart(props) {
                 name={item.name}
                 src={item.src}
                 amount={item.amount}
-                price={item.price}
+                price={item.amount * item.price}
+                reduceItem={removeItemHandler.bind(null, item.id)}
+                addItem={addItemHandler.bind(null, item)}
+                removeItem={reduceItemHandler.bind(null, item.id)}
             />
         )
     })
@@ -28,7 +42,7 @@ function Cart(props) {
             </ul>
             <div className={classes["total"]} >
                 <span>Total</span>
-                <span>{`$99`}</span>
+                <span>${totalAmount}</span>
             </div>
             <div className={classes["actions"]}>
                 <button className={classes["button--alt"]} onClick={cartCtx.closeCart}>Close</button>

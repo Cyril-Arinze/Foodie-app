@@ -14,16 +14,16 @@ const CartItems = props => {
                 <div>
                     <h4>{props.name}</h4>
                     <div>
-                        <button>+</button>
+                        <button onClick={props.addItem}>+</button>
                         <span>x{props.amount}</span>
-                        <button>-</button>
+                        <button onClick={props.reduceItem}>-</button>
                     </div>
                 </div>
                 <span>
                     <h5>${price}</h5>
                 </span>
             </div>
-            <div className={classes["cart-item__remove"]}>
+            <div onClick={props.removeItem} className={classes["cart-item__remove"]}>
                 <i className="bi bi-x-circle"></i>
             </div>
         </li>

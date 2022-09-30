@@ -2,15 +2,27 @@ import React from 'react'
 
 import classes from "./MealHeader.module.css"
 
-function MealHeader() {
+function MealHeader(props) {
+    const filterChangeHandler = (evt) => {
+        const filterValue = evt.target.value
+        props.OnFilterMeal(filterValue)
+    }
 
     return (
         <header className={classes["meal-header"]}>
             <div>
-                <h2>Todays Meal😋😋</h2>
+                <h2>Today's Meal😋</h2>
             </div>
             <div>
-                filter
+                <select value={props.selected} onChange={filterChangeHandler}>
+                    <option value="">Filter by Category</option>
+                    <option value="All">All</option>
+                    <option value="Burger">Burger</option>
+                    <option value="Cheese">Cheese</option>
+                    <option value="Drink">Drinks</option>
+                    <option value="Fries">Fries</option>
+                    <option value="Chicken">Chicken</option>
+                </select>
             </div>
         </header>
     )

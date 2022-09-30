@@ -13,11 +13,13 @@
 
 .meal-item__image {
     width: 100%;
+    display: flex;
 
 }
 
 .meal-item__image>img {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     aspect-ratio: 1;
 }
 

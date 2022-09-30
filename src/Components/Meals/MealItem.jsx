@@ -17,7 +17,6 @@ const MealItem = props => {
             id: props.id
         })
 
-        console.log(cartCtx.items);
     }
     return (
         <div className={classes["meal-item"]}>

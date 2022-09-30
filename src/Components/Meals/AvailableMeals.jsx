@@ -19,6 +19,7 @@ import hotDog1 from "../../assests/hot-dog.jpg"
 import hotDog2 from "../../assests/Hotdog1.jpg"
 import hotDog3 from "../../assests/Hotdog3.jpg"
 import classes from "./AvailableMeals.module.css"
+import MealHeader from './MealHeader'
 
 const dummy_meals = [
     {
@@ -26,7 +27,7 @@ const dummy_meals = [
         tag: "Burger",
         src: burgerBeef1,
         price: 199.99,
-        name: "American hotdog American hotdog American hotdog"
+        name: "American hotdog"
     },
     {
         id: "m2",
@@ -144,19 +145,37 @@ const dummy_meals = [
 
 
 const AvailableMeals = props => {
-    const [meals, setMeals] = useState(dummy_meals)
+    const [mealsFilter, setMealsFilter] = useState("")
+
+    const filterMealHandler = (mealTag) => {
+        setMealsFilter(mealTag)
+    }
+
+    let filteredMeal = dummy_meals.filter(meal => meal.tag.includes(mealsFilter))
+
+    if (mealsFilter === "All") {
+        filteredMeal = dummy_meals
+    }
+
+    const AvailableMeals = filteredMeal.length
+
+
     return (
-        <main className={classes.meals}>
-            {meals.map(meal => {
-                return <MealItem
-                    key={meal.id}
-                    id={meal.id}
-                    src={meal.src}
-                    price={meal.price}
-                    name={meal.name}
-                />
-            })}
-        </main>
+        <>
+            <MealHeader selected={mealsFilter} OnFilterMeal={filterMealHandler} />
+            <main className={classes.meals}>
+                {filteredMeal.map(meal => {
+                    return <MealItem
+                        key={meal.id}
+                        id={meal.id}
+                        src={meal.src}
+                        price={meal.price}
+                        name={meal.name}
+                    />
+                })}
+            </main>
+            {AvailableMeals === 0 && <h1>No available meal for this category</h1>}
+        </>
     )
 }
 
