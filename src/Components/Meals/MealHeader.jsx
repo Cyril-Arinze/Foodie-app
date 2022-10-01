@@ -18,10 +18,12 @@ function MealHeader(props) {
                     <option value="">Filter by Category</option>
                     <option value="All">All</option>
                     <option value="Burger">Burger</option>
-                    <option value="Cheese">Cheese</option>
+                    <option value="Shawarma">Shawarma</option>
                     <option value="Drink">Drinks</option>
                     <option value="Fries">Fries</option>
                     <option value="Chicken">Chicken</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="hot dog">Hot Dog</option>
                 </select>
             </div>
         </header>

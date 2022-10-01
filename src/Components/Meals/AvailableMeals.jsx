@@ -18,129 +18,170 @@ import Fries2 from "../../assests/Fries2.jpg"
 import hotDog1 from "../../assests/hot-dog.jpg"
 import hotDog2 from "../../assests/Hotdog1.jpg"
 import hotDog3 from "../../assests/Hotdog3.jpg"
+import seafoodPizza from "../../assests/seafood-pizza.jpg"
+import pizza1 from "../../assests/Pizza1.png"
+import italianPizza from "../../assests/italian-pizza.jpg"
+import pizza2 from "../../assests/pizza_.png"
+import pizzaSlice from "../../assests/Pizza-Slice.png"
 import classes from "./AvailableMeals.module.css"
 import MealHeader from './MealHeader'
 
 const dummy_meals = [
     {
         id: "m1",
-        tag: "Burger",
-        src: burgerBeef1,
-        price: 199.99,
-        name: "American hotdog"
+        tag: "Pizza",
+        src: pizzaSlice,
+        price: 2.99,
+        name: "A slice of pizza"
     },
     {
         id: "m2",
         tag: "Burger",
         src: [burgerBeef2],
-        price: 199.99,
-        name: "American hotdog"
+        price: 49.99,
+        name: "Cheese Burger"
     },
     {
         id: "m3",
         tag: "Burger",
         src: [burgerBeef3],
-        price: 199.99,
-        name: "American hotdog"
+        price: 38.99,
+        name: "Chimichurri Burger"
     },
     {
         id: "m4",
         tag: "Burger",
         src: [burgerFries],
-        price: 199.99,
-        name: "American hotdog"
+        price: 50.99,
+        name: "Veg. Burger and Fries"
     },
     {
         id: "m5",
         tag: "Chicken",
         src: [chickenVegs],
-        price: 199.99,
-        name: "American hotdog"
+        price: 29.99,
+        name: "Chicken wings + Vegs."
     },
     {
         id: "m6",
         tag: "Chicken",
         src: [FriedChicken1],
-        price: 199.99,
-        name: "American hotdog"
+        price: 19.99,
+        name: "Fried Chicken"
     },
     {
         id: "m7",
         tag: "Chicken",
         src: [FriedChicken2],
-        price: 199.99,
-        name: "American hotdog"
+        price: 99.99,
+        name: "Baked Chicken"
     },
     {
         id: "m8",
         tag: "Drink",
         src: [Coke1],
-        price: 199.99,
-        name: "American hotdog"
+        price: 5.99,
+        name: "Plastic Coca-Cola"
     },
     {
         id: "m9",
         tag: "Drink",
         src: [Coke2],
-        price: 199.99,
-        name: "American hotdog"
+        price: 4.99,
+        name: "Canned Coca-cola"
     },
     {
         id: "m10",
         tag: "Drink",
         src: [redBull],
-        price: 199.99,
-        name: "American hotdog"
+        price: 9.99,
+        name: "Red Bull Energy Drink"
     },
     {
         id: "m11",
         tag: "Drink",
         src: [monster],
         price: 199.99,
-        name: "American hotdog"
+        name: "Monster Energy Drink"
     },
     {
         id: "m12",
         tag: "Fries",
         src: [Fries],
-        price: 199.99,
-        name: "American hotdog"
+        price: 9.99,
+        name: "French Fries"
     },
     {
         id: "m13",
         tag: "Fries",
         src: [Fries1],
-        price: 199.99,
-        name: "American hotdog"
+        price: 12.99,
+        name: "French Fries"
     },
     {
         id: "m14",
         tag: "Fries",
         src: [Fries2],
-        price: 199.99,
-        name: "American hotdog"
+        price: 20.99,
+        name: "French Fries"
     },
     {
         id: "m15",
         tag: "hot dog",
         src: [hotDog1],
-        price: 199.99,
-        name: "American hotdog"
+        price: 18.99,
+        name: "Dixie Hotdog"
     },
     {
         id: "m16",
         tag: "hot dog",
         src: [hotDog2],
-        price: 199.99,
-        name: "American hotdog"
+        price: 10.99,
+        name: "Dodger Hotdog"
     },
     {
         id: "m17",
         tag: "hot dog",
         src: [hotDog3],
         price: 199.99,
-        name: "American hotdog"
+        name: "American otdog"
     },
+    {
+        id: "m18",
+        tag: "Pizza",
+        src: seafoodPizza,
+        price: 59.99,
+        name: "SeaFood Pizza"
+    },
+    {
+        id: "m19",
+        tag: "Pizza",
+        src: pizza2,
+        price: 199.99,
+        name: "American Hotdog"
+    },
+    {
+        id: "m20",
+        tag: "Pizza",
+        src: pizza1,
+        price: 19.99,
+        name: "Kubie Pizza"
+    },
+    {
+        id: "m21",
+        tag: "Pizza",
+        src: italianPizza,
+        price: 49.99,
+        name: "italian Pizza"
+    },
+    {
+        id: "m22",
+        tag: "Drink",
+        src: "https://ik.imagekit.io/oz87xfgij/storeImg/tr:w-240/milk-shake__UwPlZkUiSo.png",
+        price: 49.99,
+        name: "Milkshake"
+    },
+
 ]
 
 
@@ -174,7 +215,7 @@ const AvailableMeals = props => {
                     />
                 })}
             </main>
-            {AvailableMeals === 0 && <h1>No available meal for this category</h1>}
+            {AvailableMeals === 0 && <h1 style={{ textAlign: "center" }}>No available meal for this category</h1>}
         </>
     )
 }

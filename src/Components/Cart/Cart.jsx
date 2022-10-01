@@ -3,6 +3,8 @@ import CartContext from '../../Store/cart-context'
 import Modal from "../../UI/Modal"
 import classes from "./Cart.module.css"
 import CartItems from './CartItems'
+import EmptyCart from './EmptyCart'
+import swal from "sweetalert";
 
 function Cart(props) {
 
@@ -16,6 +18,9 @@ function Cart(props) {
     }
     const reduceItemHandler = (id) => {
         cartCtx.removeFromCart(id)
+    }
+    const orderHandler = () => {
+        swal("Oops!!!!", "Sorry, You can't order now, website is still under development", "error")
     }
     const totalAmount = cartCtx.totalAmount.toFixed(2)
 
@@ -35,19 +40,29 @@ function Cart(props) {
         )
     })
 
+    const cartHasItem = cartCtx.items.length > 0
+
+    const cartTotalAmount = (
+        <div className={classes["total"]} >
+            <span>Grand Total</span>
+            <span>${totalAmount}</span>
+        </div>
+    )
+    const cartButtons = (
+        <div className={classes["actions"]}>
+            <button className={classes["button--alt"]} onClick={cartCtx.closeCart}><i className="bi bi-x-circle"></i></button>
+            <button className={classes["button"]} onClick={orderHandler} >Order</button>
+        </div>
+    )
+
     return (
-        <Modal onClick={cartCtx.closeCart}>
+        <Modal>
             <ul className={classes["cart-items"]}>
                 {cartItem}
             </ul>
-            <div className={classes["total"]} >
-                <span>Total</span>
-                <span>${totalAmount}</span>
-            </div>
-            <div className={classes["actions"]}>
-                <button className={classes["button--alt"]} onClick={cartCtx.closeCart}>Close</button>
-                <button className={classes["button"]} >Order</button>
-            </div>
+            {cartHasItem && cartTotalAmount}
+            {cartHasItem && cartButtons}
+            {!cartHasItem && <EmptyCart />}
         </Modal>
     )
 
