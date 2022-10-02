@@ -64,6 +64,9 @@
         bottom: 0;
         z-index: 2;
         display: flex;
+        box-shadow: -3px 0px 13px -3px rgba(0, 0, 0, 0.68);
+        -webkit-box-shadow: -3px 0px 13px -3px rgba(0, 0, 0, 0.68);
+        -moz-box-shadow: -3px 0px 13px -3px rgba(0, 0, 0, 0.68);
 
     }
 
@@ -73,8 +76,6 @@
 
 
     .brand_image {
-        max-width: 10%;
-        margin: auto;
         display: none;
     }
 

@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
 import MealItem from './MealItem'
-import burgerBeef1 from "../../assests/Bugger&Beef1.jpg"
+import BakedChicken from "../../assests/BakedChicken.jpg"
 import burgerBeef2 from "../../assests/Bugger&Beef2.jpg"
 import burgerBeef3 from "../../assests/Bugger&Beef3.jpg"
 import burgerFries from "../../assests/burger&Fries.jpg"
 import chickenVegs from "../../assests/chicken&Vegetable.jpg"
 import FriedChicken1 from "../../assests/Fried_Chicken1.jpg"
-import FriedChicken2 from "../../assests/Fried-Chicken2.jpg"
 import Coke1 from "../../assests/coke_drink.jpg"
 import Coke2 from "../../assests/Coke-drink2.jpg"
 import redBull from "../../assests/RedBull_Drink.jpg"
@@ -28,27 +27,6 @@ import MealHeader from './MealHeader'
 
 const dummy_meals = [
     {
-        id: "m1",
-        tag: "Pizza",
-        src: pizzaSlice,
-        price: 2.99,
-        name: "A slice of pizza"
-    },
-    {
-        id: "m2",
-        tag: "Burger",
-        src: [burgerBeef2],
-        price: 49.99,
-        name: "Cheese Burger"
-    },
-    {
-        id: "m3",
-        tag: "Burger",
-        src: [burgerBeef3],
-        price: 38.99,
-        name: "Chimichurri Burger"
-    },
-    {
         id: "m4",
         tag: "Burger",
         src: [burgerFries],
@@ -56,11 +34,34 @@ const dummy_meals = [
         name: "Veg. Burger and Fries"
     },
     {
+        id: "m1",
+        tag: "Pizza",
+        src: pizzaSlice,
+        price: 2.99,
+        name: "A slice of pizza"
+    },
+
+    {
+        id: "m3",
+        tag: "Burger",
+        src: [burgerBeef3],
+        price: 38.99,
+        name: "Chimichurri Burger"
+    },
+
+    {
         id: "m5",
         tag: "Chicken",
         src: [chickenVegs],
         price: 29.99,
         name: "Chicken wings + Vegs."
+    },
+    {
+        id: "m9",
+        tag: "Drink",
+        src: [Coke2],
+        price: 4.99,
+        name: "Canned Coca-cola"
     },
     {
         id: "m6",
@@ -72,7 +73,7 @@ const dummy_meals = [
     {
         id: "m7",
         tag: "Chicken",
-        src: [FriedChicken2],
+        src: BakedChicken,
         price: 99.99,
         name: "Baked Chicken"
     },
@@ -84,39 +85,11 @@ const dummy_meals = [
         name: "Plastic Coca-Cola"
     },
     {
-        id: "m9",
-        tag: "Drink",
-        src: [Coke2],
-        price: 4.99,
-        name: "Canned Coca-cola"
-    },
-    {
-        id: "m10",
-        tag: "Drink",
-        src: [redBull],
-        price: 9.99,
-        name: "Red Bull Energy Drink"
-    },
-    {
-        id: "m11",
-        tag: "Drink",
-        src: [monster],
-        price: 199.99,
-        name: "Monster Energy Drink"
-    },
-    {
-        id: "m12",
-        tag: "Fries",
-        src: [Fries],
-        price: 9.99,
-        name: "French Fries"
-    },
-    {
-        id: "m13",
-        tag: "Fries",
-        src: [Fries1],
-        price: 12.99,
-        name: "French Fries"
+        id: "m20",
+        tag: "Pizza",
+        src: pizza1,
+        price: 19.99,
+        name: "Kubie Pizza"
     },
     {
         id: "m14",
@@ -126,12 +99,49 @@ const dummy_meals = [
         name: "French Fries"
     },
     {
-        id: "m15",
-        tag: "hot dog",
-        src: [hotDog1],
-        price: 18.99,
-        name: "Dixie Hotdog"
+        id: "m11",
+        tag: "Drink",
+        src: [monster],
+        price: 199.99,
+        name: "Monster Energy Drink"
     },
+    {
+        id: "m2",
+        tag: "Burger",
+        src: [burgerBeef2],
+        price: 49.99,
+        name: "Cheese Burger"
+    },
+    {
+        id: "m12",
+        tag: "Fries",
+        src: [Fries],
+        price: 9.99,
+        name: "French Fries"
+    },
+    {
+        id: "m10",
+        tag: "Drink",
+        src: [redBull],
+        price: 9.99,
+        name: "Red Bull Energy Drink"
+    },
+    {
+        id: "m13",
+        tag: "Fries",
+        src: [Fries1],
+        price: 12.99,
+        name: "French Fries"
+    },
+
+    {
+        id: "m21",
+        tag: "Pizza",
+        src: italianPizza,
+        price: 49.99,
+        name: "italian Pizza"
+    },
+
     {
         id: "m16",
         tag: "hot dog",
@@ -143,8 +153,8 @@ const dummy_meals = [
         id: "m17",
         tag: "hot dog",
         src: [hotDog3],
-        price: 199.99,
-        name: "American otdog"
+        price: 9.99,
+        name: "American Hotdog"
     },
     {
         id: "m18",
@@ -157,29 +167,24 @@ const dummy_meals = [
         id: "m19",
         tag: "Pizza",
         src: pizza2,
-        price: 199.99,
-        name: "American Hotdog"
+        price: 10.99,
+        name: "Nigerian Pizza"
     },
-    {
-        id: "m20",
-        tag: "Pizza",
-        src: pizza1,
-        price: 19.99,
-        name: "Kubie Pizza"
-    },
-    {
-        id: "m21",
-        tag: "Pizza",
-        src: italianPizza,
-        price: 49.99,
-        name: "italian Pizza"
-    },
+
+
     {
         id: "m22",
         tag: "Drink",
         src: "https://ik.imagekit.io/oz87xfgij/storeImg/tr:w-240/milk-shake__UwPlZkUiSo.png",
         price: 49.99,
         name: "Milkshake"
+    },
+    {
+        id: "m15",
+        tag: "hot dog",
+        src: [hotDog1],
+        price: 18.99,
+        name: "Dixie Hotdog"
     },
 
 ]

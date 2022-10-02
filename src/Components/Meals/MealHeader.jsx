@@ -18,6 +18,7 @@ function MealHeader(props) {
                     <option value="">Filter by Category</option>
                     <option value="All">All</option>
                     <option value="Burger">Burger</option>
+                    <option value="Bread">Bread</option>
                     <option value="Shawarma">Shawarma</option>
                     <option value="Drink">Drinks</option>
                     <option value="Fries">Fries</option>
